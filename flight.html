@@ -1,0 +1,206 @@
+<!DOCTYPE  html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Details - SkyWay Flight Booking</title>
+  <meta name="description" content="Built with jdoodle.ai - View detailed information about your selected flight and proceed to booking with SkyWay.">
+  <meta property="og:title" content="Flight Details - SkyWay Flight Booking">
+  <meta property="og:description" content="Built with jdoodle.ai - View detailed information about your selected flight and proceed to booking with SkyWay.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1476900543704-4312b78632f8">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="img/logo.svg" alt="SkyWay Logo">
+            <span>SkyWay</span>
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html" class="active">Flights</a></li>
+            <li><a href="mybookings.html">My Bookings</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn btn-secondary">Sign In</a>
+        </div>
+        <button id="mobile-menu-toggle" class="mobile-menu-button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="flight-details">
+          <button id="back-button" class="back-button">
+            <i class="icon-arrow-left"></i> Back to results
+          </button>
+          
+          <div id="flight-loader" class="loader">
+            <div class="spinner"></div>
+          </div>
+          
+          <div id="flight-not-found" class="not-found hidden">
+            <h2>Flight Not Found</h2>
+            <p>The flight you're looking for doesn't exist or has been removed.</p>
+            <a href="search.html" class="btn btn-primary">Go Back to Search</a>
+          </div>
+          
+          <div id="flight-info" class="flight-info hidden">
+            <h1>Flight Details</h1>
+            
+            <div class="flight-header">
+              <div class="airline-info">
+                <div class="airline-logo">
+                  <i class="icon-plane"></i>
+                </div>
+                <div>
+                  <h2 id="airline-name"></h2>
+                  <p id="flight-number"></p>
+                </div>
+              </div>
+              
+              <div class="flight-date-info">
+                <div class="date-info">
+                  <i class="icon-calendar"></i>
+                  <span id="flight-date"></span>
+                </div>
+                <div class="duration-info">
+                  <i class="icon-clock"></i>
+                  <span id="flight-duration"></span>
+                </div>
+              </div>
+              
+              <div class="flight-price">
+                <p>per passenger</p>
+                <h3 id="flight-price"></h3>
+              </div>
+            </div>
+            
+            <div class="flight-route">
+              <div class="route-time">
+                <p id="departure-time" class="time"></p>
+                <p id="departure-location" class="location"></p>
+              </div>
+              
+              <div class="route-line">
+                <div class="line"></div>
+                <i class="icon-plane"></i>
+                <div class="duration" id="route-duration"></div>
+              </div>
+              
+              <div class="route-time">
+                <p id="arrival-time" class="time"></p>
+                <p id="arrival-location" class="location"></p>
+              </div>
+            </div>
+            
+            <div class="flight-amenities">
+              <h3>Features & Amenities</h3>
+              
+              <div class="amenities-grid">
+                <div class="amenity">
+                  <i class="icon-briefcase"></i>
+                  <span>Carry-on baggage included</span>
+                </div>
+                <div class="amenity">
+                  <i class="icon-coffee"></i>
+                  <span>Complimentary meals</span>
+                </div>
+                <div class="amenity">
+                  <i class="icon-wifi"></i>
+                  <span>In-flight Wifi</span>
+                </div>
+                <div class="amenity">
+                  <i class="icon-user"></i>
+                  <span>Extra legroom</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="booking-section">
+              <div class="passenger-info">
+                <p>Booking for</p>
+                <div>
+                  <i class="icon-user"></i>
+                  <span>1 Passenger</span>
+                </div>
+              </div>
+              
+              <div class="total-price">
+                <p>Total price</p>
+                <h3 id="total-price"></h3>
+              </div>
+              
+              <a id="book-button" href="#" class="btn btn-primary">Continue to Booking</a>
+            </div>
+          </div>
+          
+          <div class="additional-info">
+            <h3>Important Information</h3>
+            
+            <div class="info-content">
+              <p><strong>Refund Policy:</strong> This ticket is refundable with a $50 processing fee up to 24 hours before departure.</p>
+              <p><strong>Check-in:</strong> Online check-in is available 24 hours before departure. Airport check-in closes 45 minutes before departure.</p>
+              <p><strong>Baggage:</strong> 1 carry-on bag (max 7kg) and 1 checked bag (max 23kg) are included in the fare.</p>
+              <div class="flight-image">
+                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHw1fHxhaXJwbGFuZSUyMGZsaWdodCUyMHRyYXZlbHxlbnwwfHx8fDE3NDYwMTUyMTB8MA&ixlib=rb-4.0.3&fit=fillmax&h=300&w=600" alt="Airplane in flight">
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="img/logo.svg" alt="SkyWay Logo">
+            <span>SkyWay</span>
+            <p>Book your dream flights with ease.</p>
+          </div>
+          
+          <div class="footer-links">
+            <div class="footer-column">
+              <h3>Company</h3>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-column">
+              <h3>Support</h3>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Privacy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; <span id="current-year"></span> SkyWay Flight Booking. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/flight.js"></script>
+</body>
+</html>
+ 

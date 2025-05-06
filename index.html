@@ -1,0 +1,278 @@
+<!DOCTYPE  html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyWay Flight Booking</title>
+  <meta name="description" content="Built with jdoodle.ai - Book your flights easily with SkyWay. Find the best deals on flights and manage your bookings efficiently.">
+  <meta property="og:title" content="SkyWay Flight Booking - Your Journey Starts Here">
+  <meta property="og:description" content="Built with jdoodle.ai - Book your flights easily with SkyWay. Find the best deals on flights and manage your bookings efficiently.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1476900543704-4312b78632f8">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="img/logo.svg" alt="SkyWay Logo">
+            <span>SkyWay</span>
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="search.html">Flights</a></li>
+            <li><a href="mybookings.html">My Bookings</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn btn-secondary">Sign In</a>
+        </div>
+        <button id="mobile-menu-toggle" class="mobile-menu-button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Find and Book Your <span>Perfect Flight</span></h1>
+          <p>Discover amazing deals on flights to destinations worldwide. Book easily and securely with SkyWay.</p>
+        </div>
+      </section>
+
+      <!-- Search Form Section -->
+      <section class="search-container">
+        <form id="search-form" class="search-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="from">From</label>
+              <div class="icon-input">
+                <i class="icon-location"></i>
+                <input type="text" id="from" name="from" placeholder="City or Airport" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="to">To</label>
+              <div class="icon-input">
+                <i class="icon-location"></i>
+                <input type="text" id="to" name="to" placeholder="City or Airport" required>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="depart">Depart</label>
+              <div class="icon-input">
+                <i class="icon-calendar"></i>
+                <input type="date" id="depart" name="depart" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="return">Return</label>
+              <div class="icon-input">
+                <i class="icon-calendar"></i>
+                <input type="date" id="return" name="return">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="passengers">Passengers</label>
+              <div class="icon-input">
+                <i class="icon-user"></i>
+                <select id="passengers" name="passengers" required>
+                  <option value="1">1 Passenger</option>
+                  <option value="2">2 Passengers</option>
+                  <option value="3">3 Passengers</option>
+                  <option value="4">4 Passengers</option>
+                  <option value="5">5 Passengers</option>
+                  <option value="6">6 Passengers</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Search Flights</button>
+        </form>
+      </section>
+
+      <!-- Features Section -->
+      <section class="features">
+        <div class="container">
+          <h2>Why Choose SkyWay</h2>
+          
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="icon-plane"></i>
+              </div>
+              <h3>Wide Selection</h3>
+              <p>Choose from thousands of flights across hundreds of airlines worldwide.</p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="icon-map"></i>
+              </div>
+              <h3>Global Destinations</h3>
+              <p>Fly to over 5,000 destinations across 200+ countries around the world.</p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="icon-clock"></i>
+              </div>
+              <h3>Fast Booking</h3>
+              <p>Book your flight in minutes with our simple and intuitive booking process.</p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="icon-credit-card"></i>
+              </div>
+              <h3>Secure Payments</h3>
+              <p>Your payment information is always protected with our secure payment system.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Popular Destinations -->
+      <section class="destinations">
+        <div class="container">
+          <h2>Popular Destinations</h2>
+          
+          <div class="destinations-grid">
+            <div class="destination-card">
+              <img src="https://images.unsplash.com/photo-1562587592-889f254ff71c?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHw0fHxhaXJwbGFuZSUyMGZsaWdodCUyMHRyYXZlbHxlbnwwfHx8fDE3NDYwMTQxNDJ8MA&ixlib=rb-4.0.3&fit=fillmax&h=800&w=1200" alt="New York">
+              <div class="destination-info">
+                <h3>New York</h3>
+                <p>Flights from $199</p>
+              </div>
+            </div>
+            
+            <div class="destination-card">
+              <img src="https://images.unsplash.com/photo-1611818164352-70f028c2ba2a?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwxfHxhaXJwbGFuZSUyMGZsaWdodCUyMHRyYXZlbHxlbnwwfHx8fDE3NDYwMTQxNDJ8MA&ixlib=rb-4.0.3&fit=fillmax&h=800&w=1200" alt="London">
+              <div class="destination-info">
+                <h3>London</h3>
+                <p>Flights from $299</p>
+              </div>
+            </div>
+            
+            <div class="destination-card">
+              <img src="https://images.unsplash.com/photo-1615561916422-7014e1078997?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwyfHxhaXJwbGFuZSUyMGZsaWdodCUyMHRyYXZlbHxlbnwwfHx8fDE3NDYwMTQxNDJ8MA&ixlib=rb-4.0.3&fit=fillmax&h=800&w=1200" alt="Tokyo">
+              <div class="destination-info">
+                <h3>Tokyo</h3>
+                <p>Flights from $499</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="testimonials">
+        <div class="container">
+          <h2>What Our Customers Say</h2>
+          
+          <div class="testimonials-grid">
+            <div class="testimonial-card">
+              <div class="stars">
+                <i class="icon-star"></i>
+                <i class="icon-star"></i>
+                <i class="icon-star"></i>
+                <i class="icon-star"></i>
+                <i class="icon-star"></i>
+              </div>
+              <p>"I found a great deal on an international flight. The booking process was simple and I received my tickets instantly."</p>
+              <div class="testimonial-author">
+                <p class="author-name">Sarah Johnson</p>
+                <p class="author-location">New York, USA</p>
+              </div>
+            </div>
+            
+            <div class="testimonial-card">
+              <div class="stars">
+                <i class="icon-star"></i>
+                <i class="icon-star"></i>
+                <i class="icon-star"></i>
+                <i class="icon-star"></i>
+                <i class="icon-star"></i>
+              </div>
+              <p>"SkyWay made it so easy to book my family vacation. We saved over $300 compared to other booking sites!"</p>
+              <div class="testimonial-author">
+                <p class="author-name">Michael Chen</p>
+                <p class="author-location">Vancouver, Canada</p>
+              </div>
+            </div>
+            
+            <div class="testimonial-card">
+              <div class="stars">
+                <i class="icon-star"></i>
+                <i class="icon-star"></i>
+                <i class="icon-star"></i>
+                <i class="icon-star"></i>
+                <i class="icon-star"></i>
+              </div>
+              <p>"The customer service was excellent when I needed to change my flight. They were helpful and resolved my issue quickly."</p>
+              <div class="testimonial-author">
+                <p class="author-name">Emma Williams</p>
+                <p class="author-location">London, UK</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="img/logo.svg" alt="SkyWay Logo">
+            <span>SkyWay</span>
+            <p>Book your dream flights with ease.</p>
+          </div>
+          
+          <div class="footer-links">
+            <div class="footer-column">
+              <h3>Company</h3>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-column">
+              <h3>Support</h3>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Privacy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; <span id="current-year"></span> SkyWay Flight Booking. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+ 

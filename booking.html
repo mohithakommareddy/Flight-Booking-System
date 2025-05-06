@@ -1,0 +1,208 @@
+<!DOCTYPE  html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passenger Details - SkyWay Flight Booking</title>
+  <meta name="description" content="Built with jdoodle.ai - Enter passenger details to complete your flight booking with SkyWay.">
+  <meta property="og:title" content="Passenger Details - SkyWay Flight Booking">
+  <meta property="og:description" content="Built with jdoodle.ai - Enter passenger details to complete your flight booking with SkyWay.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1476900543704-4312b78632f8">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="img/logo.svg" alt="SkyWay Logo">
+            <span>SkyWay</span>
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html" class="active">Flights</a></li>
+            <li><a href="mybookings.html">My Bookings</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn btn-secondary">Sign In</a>
+        </div>
+        <button id="mobile-menu-toggle" class="mobile-menu-button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="booking-page">
+          <button id="back-button" class="back-button">
+            <i class="icon-arrow-left"></i> Back to flight details
+          </button>
+          
+          <div id="booking-loader" class="loader">
+            <div class="spinner"></div>
+          </div>
+          
+          <div id="flight-not-found" class="not-found hidden">
+            <h2>Flight Not Found</h2>
+            <p>The flight you're looking for doesn't exist or has been removed.</p>
+            <a href="search.html" class="btn btn-primary">Go Back to Search</a>
+          </div>
+          
+          <div id="passenger-form-container" class="passenger-form-container hidden">
+            <h1>Passenger Details</h1>
+            <p class="form-description">Please enter the passenger details exactly as they appear on their passport/ID.</p>
+            
+            <div class="info-alert">
+              <i class="icon-info"></i>
+              <p>Your information is protected using secure encryption and will only be used for this booking.</p>
+            </div>
+            
+            <form id="passenger-form" class="passenger-form">
+              <div class="form-section">
+                <h2><i class="icon-user"></i> Personal Information</h2>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <p class="error-message" id="firstName-error"></p>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <p class="error-message" id="lastName-error"></p>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="icon-input">
+                      <i class="icon-mail"></i>
+                      <input type="email" id="email" name="email" required>
+                    </div>
+                    <p class="error-message" id="email-error"></p>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <div class="icon-input">
+                      <i class="icon-phone"></i>
+                      <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <p class="error-message" id="phone-error"></p>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="dateOfBirth">Date of Birth</label>
+                    <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                    <p class="error-message" id="dateOfBirth-error"></p>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="nationality">Nationality</label>
+                    <select id="nationality" name="nationality" required>
+                      <option value="">Select nationality</option>
+                      <option value="US">United States</option>
+                      <option value="UK">United Kingdom</option>
+                      <option value="CA">Canada</option>
+                      <option value="AU">Australia</option>
+                      <option value="IN">India</option>
+                    </select>
+                    <p class="error-message" id="nationality-error"></p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-section">
+                <h2><i class="icon-credit-card"></i> Travel Document</h2>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="passportNumber">Passport Number</label>
+                    <input type="text" id="passportNumber" name="passportNumber" required>
+                    <p class="error-message" id="passportNumber-error"></p>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="passportExpiry">Passport Expiry Date</label>
+                    <input type="date" id="passportExpiry" name="passportExpiry" required>
+                    <p class="error-message" id="passportExpiry-error"></p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-footer">
+                <div class="flight-summary">
+                  <p>Flight</p>
+                  <p id="flight-summary-text"></p>
+                </div>
+                
+                <div class="price-summary">
+                  <p>Total price</p>
+                  <p id="price-summary"></p>
+                </div>
+              </div>
+              
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Continue to Payment</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="img/logo.svg" alt="SkyWay Logo">
+            <span>SkyWay</span>
+            <p>Book your dream flights with ease.</p>
+          </div>
+          
+          <div class="footer-links">
+            <div class="footer-column">
+              <h3>Company</h3>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-column">
+              <h3>Support</h3>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Privacy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; <span id="current-year"></span> SkyWay Flight Booking. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
+ 

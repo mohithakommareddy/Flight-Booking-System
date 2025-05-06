@@ -1,0 +1,262 @@
+<!DOCTYPE  html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmed - SkyWay Flight Booking</title>
+  <meta name="description" content="Built with jdoodle.ai - Your flight has been successfully booked. View your booking confirmation and details with SkyWay.">
+  <meta property="og:title" content="Booking Confirmed - SkyWay Flight Booking">
+  <meta property="og:description" content="Built with jdoodle.ai - Your flight has been successfully booked. View your booking confirmation and details with SkyWay.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1476900543704-4312b78632f8">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="img/logo.svg" alt="SkyWay Logo">
+            <span>SkyWay</span>
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html">Flights</a></li>
+            <li><a href="mybookings.html">My Bookings</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn btn-secondary">Sign In</a>
+        </div>
+        <button id="mobile-menu-toggle" class="mobile-menu-button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="confirmation-page">
+          <div id="confirmation-loader" class="loader">
+            <div class="spinner"></div>
+          </div>
+          
+          <div id="flight-not-found" class="not-found hidden">
+            <h2>Flight Not Found</h2>
+            <p>The flight you're looking for doesn't exist or has been removed.</p>
+            <a href="search.html" class="btn btn-primary">Go Back to Search</a>
+          </div>
+          
+          <div id="confirmation-content" class="confirmation-content hidden">
+            <div class="confirmation-header">
+              <i class="icon-check-circle"></i>
+              <h1>Booking Confirmed!</h1>
+              <p>Your flight has been successfully booked and confirmed.</p>
+              <div class="booking-reference">
+                Booking Reference: <span id="booking-reference"></span>
+              </div>
+            </div>
+            
+            <div class="confirmation-details">
+              <div class="flight-details-section">
+                <div class="section-header">
+                  <h2>Flight Details</h2>
+                  <button id="view-flight-button" class="btn btn-outline">
+                    <i class="icon-arrow-left"></i> View Flight Details
+                  </button>
+                </div>
+                
+                <div class="flight-info">
+                  <div class="airline-info">
+                    <div class="airline-icon">
+                      <i class="icon-plane"></i>
+                    </div>
+                    <div>
+                      <p id="airline-name" class="airline-name"></p>
+                      <p id="flight-number" class="flight-number"></p>
+                    </div>
+                  </div>
+                  
+                  <div class="flight-date">
+                    <i class="icon-calendar"></i>
+                    <span id="flight-date"></span>
+                  </div>
+                  
+                  <div class="flight-duration">
+                    <i class="icon-clock"></i>
+                    <span>Duration: </span><span id="flight-duration"></span>
+                  </div>
+                </div>
+                
+                <div class="flight-route">
+                  <div class="route-times">
+                    <div class="departure">
+                      <p id="departure-time" class="time"></p>
+                      <p id="departure-location" class="location"></p>
+                    </div>
+                    
+                    <div class="route-line">
+                      <div class="line"></div>
+                      <i class="icon-plane"></i>
+                    </div>
+                    
+                    <div class="arrival">
+                      <p id="arrival-time" class="time"></p>
+                      <p id="arrival-location" class="location"></p>
+                    </div>
+                  </div>
+                  
+                  <div class="price-info">
+                    <p>Ticket Price</p>
+                    <p id="ticket-price" class="price"></p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="passenger-details-section">
+                <h2>Passenger Information</h2>
+                
+                <div class="passenger-details-grid">
+                  <div class="passenger-detail">
+                    <p>Passenger Name</p>
+                    <div>
+                      <i class="icon-user"></i>
+                      <span id="passenger-name"></span>
+                    </div>
+                  </div>
+                  
+                  <div class="passenger-detail">
+                    <p>Email</p>
+                    <div>
+                      <i class="icon-mail"></i>
+                      <span id="passenger-email"></span>
+                    </div>
+                  </div>
+                  
+                  <div class="passenger-detail">
+                    <p>Phone</p>
+                    <div>
+                      <i class="icon-phone"></i>
+                      <span id="passenger-phone"></span>
+                    </div>
+                  </div>
+                  
+                  <div class="passenger-detail">
+                    <p>Passport Number</p>
+                    <span id="passenger-passport"></span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="payment-details-section">
+                <h2>Payment Information</h2>
+                
+                <div class="payment-details-grid">
+                  <div class="payment-detail">
+                    <p>Payment Method</p>
+                    <span id="payment-method"></span>
+                  </div>
+                  
+                  <div class="payment-detail">
+                    <p>Payment Status</p>
+                    <div class="payment-status">
+                      <i class="icon-check-circle"></i>
+                      <span class="status">Paid</span>
+                    </div>
+                  </div>
+                  
+                  <div class="payment-detail">
+                    <p>Amount Paid</p>
+                    <span id="amount-paid"></span>
+                  </div>
+                  
+                  <div class="payment-detail">
+                    <p>Transaction Date</p>
+                    <span id="transaction-date"></span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="actions-section">
+                <button class="btn btn-outline">
+                  <i class="icon-download"></i> Download E-Ticket
+                </button>
+                
+                <div class="actions-group">
+                  <button id="view-flight-details" class="btn btn-outline">
+                    <i class="icon-plane"></i> View Flight Details
+                  </button>
+                  
+                  <button class="btn btn-primary">
+                    <i class="icon-share"></i> Share Itinerary
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="important-info">
+              <h2>Important Information</h2>
+              
+              <div class="info-content">
+                <p><strong>Check-in:</strong> Online check-in opens 24 hours before departure and closes 2 hours before departure. You can also check in at the airport counter.</p>
+                <p><strong>Baggage:</strong> Your ticket includes 1 carry-on bag (max 7kg) and 1 checked bag (max 23kg). Additional baggage can be purchased separately.</p>
+                <p><strong>Changes:</strong> Flight changes can be made up to 24 hours before departure, subject to fare difference and change fee.</p>
+                <p><strong>Cancellation:</strong> Cancellations made more than 24 hours before departure are eligible for a partial refund minus cancellation fees.</p>
+              </div>
+              
+              <div class="book-another">
+                <a href="index.html" class="btn btn-primary">Book Another Flight</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="img/logo.svg" alt="SkyWay Logo">
+            <span>SkyWay</span>
+            <p>Book your dream flights with ease.</p>
+          </div>
+          
+          <div class="footer-links">
+            <div class="footer-column">
+              <h3>Company</h3>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-column">
+              <h3>Support</h3>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Privacy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; <span id="current-year"></span> SkyWay Flight Booking. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/confirmation.js"></script>
+</body>
+</html>
+ 

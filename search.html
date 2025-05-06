@@ -1,0 +1,215 @@
+<!DOCTYPE  html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Search - SkyWay Flight Booking</title>
+  <meta name="description" content="Built with jdoodle.ai - Search and compare flights to find the best deals for your travel needs with SkyWay Flight Booking.">
+  <meta property="og:title" content="Flight Search - SkyWay Flight Booking">
+  <meta property="og:description" content="Built with jdoodle.ai - Search and compare flights to find the best deals for your travel needs with SkyWay Flight Booking.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1476900543704-4312b78632f8">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="img/logo.svg" alt="SkyWay Logo">
+            <span>SkyWay</span>
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html" class="active">Flights</a></li>
+            <li><a href="mybookings.html">My Bookings</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn btn-secondary">Sign In</a>
+        </div>
+        <button id="mobile-menu-toggle" class="mobile-menu-button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <!-- Search Form Section -->
+        <section class="search-container search-page">
+          <form id="search-form" class="search-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="from">From</label>
+                <div class="icon-input">
+                  <i class="icon-location"></i>
+                  <input type="text" id="from" name="from" placeholder="City or Airport" required>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="to">To</label>
+                <div class="icon-input">
+                  <i class="icon-location"></i>
+                  <input type="text" id="to" name="to" placeholder="City or Airport" required>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="depart">Depart</label>
+                <div class="icon-input">
+                  <i class="icon-calendar"></i>
+                  <input type="date" id="depart" name="depart" required>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="return">Return</label>
+                <div class="icon-input">
+                  <i class="icon-calendar"></i>
+                  <input type="date" id="return" name="return">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="passengers">Passengers</label>
+                <div class="icon-input">
+                  <i class="icon-user"></i>
+                  <select id="passengers" name="passengers" required>
+                    <option value="1">1 Passenger</option>
+                    <option value="2">2 Passengers</option>
+                    <option value="3">3 Passengers</option>
+                    <option value="4">4 Passengers</option>
+                    <option value="5">5 Passengers</option>
+                    <option value="6">6 Passengers</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Search Flights</button>
+          </form>
+        </section>
+
+        <!-- Search Results -->
+        <section class="search-results">
+          <div class="search-sidebar">
+            <div class="filters-container">
+              <h2><i class="icon-filter"></i> Filters</h2>
+              
+              <div class="filter-group">
+                <h3>Price Range</h3>
+                <div class="price-range">
+                  <span id="min-price">$0</span>
+                  <input type="range" id="price-slider" min="0" max="1000" step="50" value="1000">
+                  <span id="max-price">$1000</span>
+                </div>
+              </div>
+              
+              <div class="filter-group">
+                <h3>Time of Day</h3>
+                <label class="radio-label">
+                  <input type="radio" name="time-of-day" value="all" checked>
+                  <i class="icon-clock"></i> Any Time
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="time-of-day" value="morning">
+                  <i class="icon-sunrise"></i> Morning (6AM - 12PM)
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="time-of-day" value="afternoon">
+                  <i class="icon-sun"></i> Afternoon (12PM - 6PM)
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="time-of-day" value="evening">
+                  <i class="icon-moon"></i> Evening (6PM - 12AM)
+                </label>
+              </div>
+              
+              <div class="filter-group" id="airlines-filter">
+                <h3>Airlines</h3>
+                <!-- Airlines will be populated by JavaScript -->
+              </div>
+            </div>
+          </div>
+          
+          <div class="results-container">
+            <div class="results-header">
+              <h2 id="results-count">Searching for flights...</h2>
+              <div class="sort-options">
+                <select id="sort-by">
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="duration">Duration: Shortest</option>
+                </select>
+              </div>
+            </div>
+            
+            <div id="flights-loader" class="loader">
+              <div class="spinner"></div>
+            </div>
+            
+            <div id="flights-list" class="flights-list">
+              <!-- Flights will be populated by JavaScript -->
+            </div>
+            
+            <div id="no-flights" class="no-results hidden">
+              <h3>No flights match your filters</h3>
+              <p>Try adjusting your filters to see more results</p>
+              <button id="reset-filters" class="btn btn-secondary">Reset Filters</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="img/logo.svg" alt="SkyWay Logo">
+            <span>SkyWay</span>
+            <p>Book your dream flights with ease.</p>
+          </div>
+          
+          <div class="footer-links">
+            <div class="footer-column">
+              <h3>Company</h3>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-column">
+              <h3>Support</h3>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Privacy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; <span id="current-year"></span> SkyWay Flight Booking. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>
+ 

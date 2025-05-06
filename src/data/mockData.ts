@@ -1,0 +1,117 @@
+import  { Flight } from '../types';
+
+export const mockFlights: Flight[] = [
+  {
+    id: 1,
+    airline: 'SkyWay Airlines',
+    flightNumber: 'SW101',
+    from: 'New York (JFK)',
+    to: 'London (LHR)',
+    departureTime: '08:00',
+    arrivalTime: '20:00',
+    duration: '7h 00m',
+    price: 549,
+    seatsAvailable: 12,
+    departureDate: '2023-07-15',
+    returnDate: null
+  },
+  {
+    id: 2,
+    airline: 'Global Airways',
+    flightNumber: 'GA205',
+    from: 'New York (JFK)',
+    to: 'London (LHR)',
+    departureTime: '12:30',
+    arrivalTime: '00:30',
+    duration: '7h 00m',
+    price: 499,
+    seatsAvailable: 8,
+    departureDate: '2023-07-15',
+    returnDate: null
+  },
+  {
+    id: 3,
+    airline: 'Atlantic Express',
+    flightNumber: 'AE310',
+    from: 'New York (JFK)',
+    to: 'London (LHR)',
+    departureTime: '16:45',
+    arrivalTime: '04:45',
+    duration: '7h 00m',
+    price: 475,
+    seatsAvailable: 3,
+    departureDate: '2023-07-15',
+    returnDate: null
+  },
+  {
+    id: 4,
+    airline: 'SkyWay Airlines',
+    flightNumber: 'SW102',
+    from: 'New York (JFK)',
+    to: 'London (LHR)',
+    departureTime: '21:15',
+    arrivalTime: '09:15',
+    duration: '7h 00m',
+    price: 450,
+    seatsAvailable: 15,
+    departureDate: '2023-07-15',
+    returnDate: null
+  },
+  {
+    id: 5,
+    airline: 'SkyWay Airlines',
+    flightNumber: 'SW205',
+    from: 'London (LHR)',
+    to: 'Paris (CDG)',
+    departureTime: '09:30',
+    arrivalTime: '11:45',
+    duration: '1h 15m',
+    price: 199,
+    seatsAvailable: 22,
+    departureDate: '2023-07-20',
+    returnDate: null
+  },
+  {
+    id: 6,
+    airline: 'Euro Connect',
+    flightNumber: 'EC118',
+    from: 'London (LHR)',
+    to: 'Paris (CDG)',
+    departureTime: '14:15',
+    arrivalTime: '16:30',
+    duration: '1h 15m',
+    price: 179,
+    seatsAvailable: 5,
+    departureDate: '2023-07-20',
+    returnDate: null
+  },
+  {
+    id: 7,
+    airline: 'Global Airways',
+    flightNumber: 'GA330',
+    from: 'London (LHR)',
+    to: 'Tokyo (HND)',
+    departureTime: '11:00',
+    arrivalTime: '06:45',
+    duration: '11h 45m',
+    price: 899,
+    seatsAvailable: 10,
+    departureDate: '2023-08-05',
+    returnDate: null
+  },
+  {
+    id: 8,
+    airline: 'Pacific Air',
+    flightNumber: 'PA452',
+    from: 'Tokyo (HND)',
+    to: 'Sydney (SYD)',
+    departureTime: '19:30',
+    arrivalTime: '05:15',
+    duration: '9h 45m',
+    price: 745,
+    seatsAvailable: 7,
+    departureDate: '2023-08-15',
+    returnDate: null
+  }
+];
+ 
