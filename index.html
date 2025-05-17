@@ -1,0 +1,1024 @@
+<!DOCTYPE  html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Built with jdoodle.ai - Book your next flight with SkyJourney - the best flight booking system for all your travel needs">
+  <meta property="og:title" content="SkyJourney Flight Booking System">
+  <meta property="og:description" content="Built with jdoodle.ai - Find and book the best flight deals across the globe with SkyJourney">
+  <meta property="og:image" content="https://imagedelivery.net/FIZL8110j4px64kO6qJxWA/7d53e3f3ja602j4070j925aj8c26cb20ea62/public">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="SkyJourney Flight Booking System">
+  <meta property="twitter:description" content="Built with jdoodle.ai - Find and book the best flight deals across the globe with SkyJourney">
+  <meta property="twitter:image" content="https://imagedelivery.net/FIZL8110j4px64kO6qJxWA/7d53e3f3ja602j4070j925aj8c26cb20ea62/public">
+  <title>SkyJourney Flight Booking System</title>
+  <link rel="icon" href="favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <i class="bi bi-airplane fs-3 me-2"></i>
+        <span class="fw-bold">SkyJourney</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#flights">Flights</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#deals">Deals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#features">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">Contact</a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-light" href="login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+   <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row min-vh-75 align-items-center">
+        <div class="col-md-8 col-lg-6 text-white">
+          <h1 class="display-4 fw-bold mb-4">Discover the World with SkyJourney</h1>
+          <p class="lead mb-4">Book your flights to hundreds of destinations worldwide with our easy booking system.</p>
+          <a href="#search-form" class="btn btn-primary btn-lg">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </header>
+ 
+
+  <!-- Search Form Section -->
+  <section id="search-form" class="py-5 bg-light">
+    <div class="container">
+      <div class="search-container p-4 bg-white rounded shadow-sm">
+        <h2 class="mb-4 text-center">Find Your Flight</h2>
+        <form id="flight-search-form">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="form-check form-check-inline mb-3">
+                <input class="form-check-input" type="radio" name="tripType" id="roundTrip" value="roundTrip" checked>
+                <label class="form-check-label" for="roundTrip">Round Trip</label>
+              </div>
+              <div class="form-check form-check-inline mb-3">
+                <input class="form-check-input" type="radio" name="tripType" id="oneWay" value="oneWay">
+                <label class="form-check-label" for="oneWay">One Way</label>
+              </div>
+            </div>
+            <div class="col-12"></div>
+            <div class="col-md-6">
+              <label for="fromLocation" class="form-label">From</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+                <input type="text" class="form-control" id="fromLocation" name="fromLocation" placeholder="City or Airport" list="fromLocationOptions" required>
+                <datalist id="fromLocationOptions">
+                  <option value="New York">
+                  <option value="London">
+                  <option value="Paris">
+                  <option value="Tokyo">
+                  <option value="Sydney">
+                  <option value="Los Angeles">
+                  <option value="Dubai">
+                  <option value="Singapore">
+                  <option value="Hong Kong">
+                  <option value="Delhi">
+                </datalist>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="toLocation" class="form-label">To</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+                <input type="text" class="form-control" id="toLocation" name="toLocation" placeholder="City or Airport" list="toLocationOptions" required>
+                <datalist id="toLocationOptions">
+                  <option value="New York">
+                  <option value="London">
+                  <option value="Paris">
+                  <option value="Tokyo">
+                  <option value="Sydney">
+                  <option value="Los Angeles">
+                  <option value="Dubai">
+                  <option value="Singapore">
+                  <option value="Hong Kong">
+                  <option value="Delhi">
+                </datalist>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label for="departDate" class="form-label">Depart Date</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+                <input type="date" class="form-control" id="departDate" name="departDate" required>
+              </div>
+            </div>
+            <div class="col-md-3 return-date">
+              <label for="returnDate" class="form-label">Return Date</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+                <input type="date" class="form-control" id="returnDate" name="returnDate">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label for="passengers" class="form-label">Passengers</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                <select class="form-select" id="passengers" name="passengers">
+                  <option value="1">1 Adult</option>
+                  <option value="2">2 Adults</option>
+                  <option value="3">3 Adults</option>
+                  <option value="4">4 Adults</option>
+                  <option value="5">5+ Adults</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label for="travelClass" class="form-label">Class</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-star"></i></span>
+                <select class="form-select" id="travelClass" name="travelClass">
+                  <option value="economy">Economy</option>
+                  <option value="premium">Premium Economy</option>
+                  <option value="business">Business</option>
+                  <option value="first">First Class</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-12 text-center mt-4">
+              <button type="submit" class="btn btn-primary btn-lg px-5">Search Flights</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Deals Section -->
+  <section id="deals" class="py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Special Flight Deals</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card deal-card h-100">
+            <div class="badge bg-danger position-absolute top-0 end-0 m-3">20% OFF</div>
+            <img src="https://images.unsplash.com/photo-1621522626370-ec009a90fbf1?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwyfHxhaXJwbGFuZSUyMGZseWluZyUyMHNjZW5pYyUyMHZpZXd8ZW58MHx8fHwxNzQ3NDgwOTY4fDA&ixlib=rb-4.1.0&fit=fillmax&h=800&w=1200" class="card-img-top" alt="White and red airplane flying through the sky">
+            <div class="card-body">
+              <h5 class="card-title">New York to Paris</h5>
+              <p class="text-muted"><i class="bi bi-calendar me-2"></i>Jun 15 - Jun 30</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price">$599</span>
+                <span class="text-decoration-line-through text-muted">$749</span>
+              </div>
+            </div>
+            <div class="card-footer bg-white border-top-0">
+              <a href="#search-form" class="btn btn-outline-primary w-100">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card deal-card h-100">
+            <div class="badge bg-danger position-absolute top-0 end-0 m-3">15% OFF</div>
+            <img src="https://images.unsplash.com/photo-1587893904933-5b23fefaea6d?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHw1fHxhaXJwbGFuZSUyMGZseWluZyUyMHNjZW5pYyUyMHZpZXd8ZW58MHx8fHwxNzQ3NDgwOTY4fDA&ixlib=rb-4.1.0&fit=fillmax&h=800&w=1200" class="card-img-top" alt="Airplane interior with empty seats">
+            <div class="card-body">
+              <h5 class="card-title">London to Tokyo</h5>
+              <p class="text-muted"><i class="bi bi-calendar me-2"></i>Jul 10 - Jul 25</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price">$899</span>
+                <span class="text-decoration-line-through text-muted">$1059</span>
+              </div>
+            </div>
+            <div class="card-footer bg-white border-top-0">
+              <a href="#search-form" class="btn btn-outline-primary w-100">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card deal-card h-100">
+            <div class="badge bg-danger position-absolute top-0 end-0 m-3">25% OFF</div>
+            <img src="https://images.unsplash.com/photo-1591981813204-f5a433700b7b?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwxfHxhaXJwbGFuZSUyMGZseWluZyUyMHNjZW5pYyUyMHZpZXd8ZW58MHx8fHwxNzQ3NDgwOTY4fDA&ixlib=rb-4.1.0&fit=fillmax&h=800&w=1200" class="card-img-top" alt="View from airplane window of scenic landscape below">
+            <div class="card-body">
+              <h5 class="card-title">Los Angeles to Sydney</h5>
+              <p class="text-muted"><i class="bi bi-calendar me-2"></i>Aug 5 - Aug 20</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price">$1199</span>
+                <span class="text-decoration-line-through text-muted">$1599</span>
+              </div>
+            </div>
+            <div class="card-footer bg-white border-top-0">
+              <a href="#search-form" class="btn btn-outline-primary w-100">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-5 bg-light" id="features">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Why Choose SkyJourney</h2>
+      <div class="row g-4">
+        <div class="col-md-4 text-center">
+          <div class="feature-box p-4">
+            <div class="feature-icon bg-primary text-white mb-4">
+              <i class="bi bi-piggy-bank"></i>
+            </div>
+            <h4>Best Price Guarantee</h4>
+            <p>Find a lower price? We'll match it and give you an additional 10% off.</p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="feature-box p-4">
+            <div class="feature-icon bg-primary text-white mb-4">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h4>Secure Booking</h4>
+            <p>Your payment and personal information are always protected.</p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="feature-box p-4">
+            <div class="feature-icon bg-primary text-white mb-4">
+              <i class="bi bi-headset"></i>
+            </div>
+            <h4>24/7 Customer Support</h4>
+            <p>Our support team is available round the clock to assist you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-5" id="testimonials">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">What Our Customers Say</h2>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="testimonial-item text-center">
+                  <img src="https://randomuser.me/api/portraits/women/32.jpg" class="rounded-circle testimonial-img" alt="Customer photo">
+                  <h5 class="mt-3">Sarah Johnson</h5>
+                  <p class="text-muted mb-3">New York, USA</p>
+                  <div class="rating mb-3">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                  </div>
+                  <p>"SkyJourney made booking my family vacation a breeze. The interface is intuitive, and I found incredible deals on flights to Europe. Highly recommended!"</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="testimonial-item text-center">
+                  <img src="https://randomuser.me/api/portraits/men/41.jpg" class="rounded-circle testimonial-img" alt="Customer photo">
+                  <h5 class="mt-3">Michael Rodriguez</h5>
+                  <p class="text-muted mb-3">Los Angeles, USA</p>
+                  <div class="rating mb-3">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-half text-warning"></i>
+                  </div>
+                  <p>"As a frequent business traveler, I've tried many booking platforms. SkyJourney consistently offers the best prices and most convenient flight options. Their customer service is outstanding."</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="testimonial-item text-center">
+                  <img src="https://randomuser.me/api/portraits/women/65.jpg" class="rounded-circle testimonial-img" alt="Customer photo">
+                  <h5 class="mt-3">Emily Chen</h5>
+                  <p class="text-muted mb-3">Toronto, Canada</p>
+                  <div class="rating mb-3">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star text-warning"></i>
+                  </div>
+                  <p>"The flight deals I found on SkyJourney saved me over $300 on my recent trip to Asia. The booking process was smooth, and I received instant confirmation."</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h5 class="mb-4">SkyJourney</h5>
+          <p>Your trusted partner for booking flights to destinations worldwide. Discover the world with us!</p>
+          <div class="social-links mt-4">
+            <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-5"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-linkedin fs-5"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+          <h6 class="text-uppercase mb-4">Company</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">About Us</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Careers</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blog</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Press</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+          <h6 class="text-uppercase mb-4">Support</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Help Center</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <h6 class="text-uppercase mb-4">Newsletter</h6>
+          <p>Subscribe to our newsletter to get updates on our latest offers!</p>
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email" aria-describedby="subscribe-btn">
+            <button class="btn btn-primary" type="button" id="subscribe-btn">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">&copy; 2023 SkyJourney. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="mb-0">
+            <a href="#" class="text-white">Privacy Policy</a> | 
+            <a href="#" class="text-white">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Results Modal -->
+  <div class="modal fade" id="searchResultsModal" tabindex="-1" aria-labelledby="searchResultsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="searchResultsModalLabel">Flight Search Results</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Search Summary -->
+          <div class="search-summary bg-white p-4 rounded shadow-sm mb-4">
+            <div class="row">
+              <div class="col-md-8">
+                <h5 class="mb-3" id="routeSummary"></h5>
+                <div class="d-flex flex-wrap">
+                  <div class="me-4 mb-2">
+                    <small class="text-muted d-block">Departure</small>
+                    <span id="departSummary"></span>
+                  </div>
+                  <div class="me-4 mb-2 return-summary">
+                    <small class="text-muted d-block">Return</small>
+                    <span id="returnSummary"></span>
+                  </div>
+                  <div class="me-4 mb-2">
+                    <small class="text-muted d-block">Passengers</small>
+                    <span id="passengersSummary"></span>
+                  </div>
+                  <div class="mb-2">
+                    <small class="text-muted d-block">Class</small>
+                    <span id="classSummary"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Modify Search</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filters and Results -->
+          <div class="row mb-4">
+            <div class="col-lg-3">
+              <div class="bg-white p-4 rounded shadow-sm">
+                <h5 class="mb-3">Filters</h5>
+                
+                <div class="mb-4">
+                  <h6>Price Range</h6>
+                  <div class="range-slider">
+                    <input type="range" class="form-range" id="priceRange" min="0" max="1000" value="800">
+                    <div class="d-flex justify-content-between">
+                      <span>$0</span>
+                      <span id="priceRangeValue">$800</span>
+                      <span>$1000</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="mb-4">
+                  <h6>Stops</h6>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="nonstop" checked>
+                    <label class="form-check-label" for="nonstop">Non-stop</label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="oneStop" checked>
+                    <label class="form-check-label" for="oneStop">1 Stop</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="twoStops" checked>
+                    <label class="form-check-label" for="twoStops">2+ Stops</label>
+                  </div>
+                </div>
+                
+                <div class="mb-4">
+                  <h6>Airlines</h6>
+                  <div class="airlines-filter-container">
+                    <!-- Airlines filters will be dynamically added here -->
+                  </div>
+                </div>
+                
+                <div>
+                  <h6>Departure Time</h6>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="morning" checked>
+                    <label class="form-check-label" for="morning">Morning (6am - 12pm)</label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="afternoon" checked>
+                    <label class="form-check-label" for="afternoon">Afternoon (12pm - 6pm)</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="evening" checked>
+                    <label class="form-check-label" for="evening">Evening (6pm - 6am)</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-9 mt-4 mt-lg-0">
+              <!-- Sorting options -->
+              <div class="d-flex justify-content-between align-items-center bg-white p-3 rounded shadow-sm mb-4">
+                <div>
+                  <span class="fw-bold" id="flightsCount"></span>
+                </div>
+                <div class="d-flex align-items-center">
+                  <label for="sortOptions" class="me-2">Sort by:</label>
+                  <select class="form-select form-select-sm" id="sortOptions" style="width: auto">
+                    <option value="price">Price (Lowest first)</option>
+                    <option value="duration">Duration (Shortest first)</option>
+                    <option value="departure">Departure (Earliest first)</option>
+                    <option value="arrival">Arrival (Earliest first)</option>
+                  </select>
+                </div>
+              </div>
+              
+              <!-- Flight results -->
+              <div class="flights-container">
+                <h5 class="mb-3">Outbound Flights</h5>
+                <div id="outboundFlights">
+                  <!-- Outbound flights will be dynamically added here -->
+                </div>
+                
+                <div id="returnFlightsContainer" class="mt-5">
+                  <h5 class="mb-3">Return Flights</h5>
+                  <div id="returnFlights">
+                    <!-- Return flights will be dynamically added here -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking Modal -->
+  <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bookingModalLabel">Flight Booking</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="booking-progress mb-5">
+            <div class="row justify-content-center text-center">
+              <div class="col-md-3 mb-3 mb-md-0">
+                <div class="progress-step completed">
+                  <div class="progress-icon">
+                    <i class="bi bi-search"></i>
+                  </div>
+                  <div class="progress-text mt-2">Search</div>
+                </div>
+              </div>
+              <div class="col-md-3 mb-3 mb-md-0">
+                <div class="progress-step active">
+                  <div class="progress-icon">
+                    <i class="bi bi-credit-card"></i>
+                  </div>
+                  <div class="progress-text mt-2">Book & Pay</div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="progress-step">
+                  <div class="progress-icon">
+                    <i class="bi bi-check-circle"></i>
+                  </div>
+                  <div class="progress-text mt-2">Confirmation</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <!-- Booking Form -->
+            <div class="col-lg-8">
+              <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white py-3">
+                  <h4 class="mb-0">Flight Details</h4>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                      <div class="d-flex align-items-center">
+                        <div class="airline-logo me-3 bg-light rounded p-2 text-center" style="width: 60px; height: 60px">
+                          <i class="bi bi-airplane fs-3 text-primary"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0" id="bookingAirline"></h6>
+                          <small class="text-muted" id="bookingFlightNumber"></small>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4 mb-md-0">
+                      <div class="flight-times d-flex justify-content-between align-items-center">
+                        <div class="text-center">
+                          <h5 class="mb-0" id="bookingDepartTime"></h5>
+                          <small class="text-muted" id="bookingFrom"></small>
+                        </div>
+                        
+                        <div class="flight-duration text-center flex-grow-1 px-2">
+                          <div class="flight-line position-relative">
+                            <span class="flight-stops position-absolute top-50 start-50 translate-middle bg-white px-2" id="bookingDuration">
+                            </span>
+                          </div>
+                          <small class="text-muted" id="bookingStops"></small>
+                        </div>
+                        
+                        <div class="text-center">
+                          <h5 class="mb-0" id="bookingArrivalTime"></h5>
+                          <small class="text-muted" id="bookingTo"></small>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-2 text-md-end">
+                      <h5 class="text-primary mb-0" id="bookingPrice"></h5>
+                      <small class="text-muted">per person</small>
+                    </div>
+                  </div>
+                  
+                  <div class="row mt-3">
+                    <div class="col-md-6">
+                      <p class="mb-1"><strong>Date:</strong> <span id="bookingDate"></span></p>
+                      <p class="mb-1"><strong>Class:</strong> <span id="bookingClass"></span></p>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="mb-1"><strong>Passengers:</strong> <span id="bookingPassengers"></span></p>
+                      <p class="mb-1"><strong>Baggage:</strong> 1 checked bag included</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <form id="booking-form">
+                <div class="card shadow-sm mb-4">
+                  <div class="card-header bg-white py-3">
+                    <h4 class="mb-0">Passenger Information</h4>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="mb-3">Primary Passenger</h5>
+                    
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label for="firstName" class="form-label">First Name *</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="lastName" class="form-label">Last Name *</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="phone" class="form-label">Phone *</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                      </div>
+                      <div class="col-12">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" name="address">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" class="form-control" id="city" name="city">
+                      </div>
+                      <div class="col-md-3">
+                        <label for="country" class="form-label">Country</label>
+                        <select class="form-select" id="country" name="country">
+                          <option value="United States">United States</option>
+                          <option value="Canada">Canada</option>
+                          <option value="United Kingdom">United Kingdom</option>
+                          <option value="Australia">Australia</option>
+                          <option value="Germany">Germany</option>
+                          <option value="France">France</option>
+                          <option value="Japan">Japan</option>
+                          <option value="China">China</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="zipCode" class="form-label">Zip/Postal Code</label>
+                        <input type="text" class="form-control" id="zipCode" name="zipCode">
+                      </div>
+                    </div>
+                    
+                    <div id="additionalPassengersContainer">
+                      <!-- Additional passengers will be added here dynamically -->
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="card shadow-sm mb-4">
+                  <div class="card-header bg-white py-3">
+                    <h4 class="mb-0">Payment Information</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="mb-4">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditCard" checked>
+                        <label class="form-check-label" for="creditCard">Credit Card</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="paypal" value="paypal">
+                        <label class="form-check-label" for="paypal">PayPal</label>
+                      </div>
+                    </div>
+                    
+                    <div id="creditCardForm">
+                      <div class="row g-3">
+                        <div class="col-12">
+                          <label for="cardNumber" class="form-label">Card Number *</label>
+                          <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="XXXX XXXX XXXX XXXX" required>
+                        </div>
+                        <div class="col-12">
+                          <label for="cardHolder" class="form-label">Cardholder Name *</label>
+                          <input type="text" class="form-control" id="cardHolder" name="cardHolder" required>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="expiryDate" class="form-label">Expiry Date *</label>
+                          <input type="text" class="form-control" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="cvv" class="form-label">CVV *</label>
+                          <input type="text" class="form-control" id="cvv" name="cvv" placeholder="XXX" required>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div id="paypalForm" class="d-none mt-3">
+                      <p>You will be redirected to PayPal to complete your payment.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="card shadow-sm mb-4">
+                  <div class="card-header bg-white py-3">
+                    <h4 class="mb-0">Additional Services</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="travelInsurance">
+                          <label class="form-check-label" for="travelInsurance">
+                            Travel Insurance - $25 per passenger
+                          </label>
+                          <p class="text-muted small mt-1">Protection for trip cancellation, medical emergencies, and more.</p>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="priorityBoarding">
+                          <label class="form-check-label" for="priorityBoarding">
+                            Priority Boarding - $15 per passenger
+                          </label>
+                          <p class="text-muted small mt-1">Be among the first to board the aircraft.</p>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="extraLegroom">
+                          <label class="form-check-label" for="extraLegroom">
+                            Extra Legroom Seats - $30 per passenger
+                          </label>
+                          <p class="text-muted small mt-1">More comfortable seating with additional legroom.</p>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="airportPickup">
+                          <label class="form-check-label" for="airportPickup">
+                            Airport Pickup - $45
+                          </label>
+                          <p class="text-muted small mt-1">Convenient transportation from the airport to your hotel.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="card shadow-sm mb-4">
+                  <div class="card-header bg-white py-3">
+                    <h4 class="mb-0">Terms and Conditions</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="termsConditions" required>
+                      <label class="form-check-label" for="termsConditions">
+                        I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary btn-lg">Complete Booking</button>
+                </div>
+              </form>
+            </div>
+            
+            <!-- Booking Summary -->
+            <div class="col-lg-4 mt-4 mt-lg-0">
+              <div class="card shadow-sm booking-summary position-sticky" style="top: 20px;">
+                <div class="card-header bg-white py-3">
+                  <h4 class="mb-0">Booking Summary</h4>
+                </div>
+                <div class="card-body">
+                  <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-2">
+                      <span id="ticketSummary"></span>
+                      <span id="ticketPriceSummary"></span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                      <span>Taxes & Fees</span>
+                      <span id="taxesSummary"></span>
+                    </div>
+                    <div id="insuranceCost" class="d-flex justify-content-between mb-2 d-none">
+                      <span>Travel Insurance</span>
+                      <span id="insurancePriceSummary"></span>
+                    </div>
+                    <div id="priorityBoardingCost" class="d-flex justify-content-between mb-2 d-none">
+                      <span>Priority Boarding</span>
+                      <span id="priorityBoardingPriceSummary"></span>
+                    </div>
+                    <div id="extraLegroomCost" class="d-flex justify-content-between mb-2 d-none">
+                      <span>Extra Legroom Seats</span>
+                      <span id="extraLegroomPriceSummary"></span>
+                    </div>
+                    <div id="airportPickupCost" class="d-flex justify-content-between mb-2 d-none">
+                      <span>Airport Pickup</span>
+                      <span>$45</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between fw-bold">
+                      <span>Total</span>
+                      <span id="totalPrice"></span>
+                    </div>
+                  </div>
+                  
+                  <div class="alert alert-primary mb-0">
+                    <h6><i class="bi bi-info-circle me-2"></i>Booking Information</h6>
+                    <ul class="mb-0 ps-3">
+                      <li>Prices include all taxes and fees</li>
+                      <li>Free cancellation up to 24 hours before departure</li>
+                      <li>1 checked bag (23kg) included per passenger</li>
+                      <li>Receive e-tickets via email after booking</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="confirmationModalLabel">Booking Confirmation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="booking-progress mb-5">
+            <div class="row justify-content-center text-center">
+              <div class="col-md-3 mb-3 mb-md-0">
+                <div class="progress-step completed">
+                  <div class="progress-icon">
+                    <i class="bi bi-search"></i>
+                  </div>
+                  <div class="progress-text mt-2">Search</div>
+                </div>
+              </div>
+              <div class="col-md-3 mb-3 mb-md-0">
+                <div class="progress-step completed">
+                  <div class="progress-icon">
+                    <i class="bi bi-credit-card"></i>
+                  </div>
+                  <div class="progress-text mt-2">Book & Pay</div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="progress-step active">
+                  <div class="progress-icon">
+                    <i class="bi bi-check-circle"></i>
+                  </div>
+                  <div class="progress-text mt-2">Confirmation</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Success Message -->
+          <div class="alert alert-success text-center p-4 mb-5">
+            <i class="bi bi-check-circle-fill fs-1 mb-3"></i>
+            <h3>Booking Confirmed!</h3>
+            <p class="lead mb-0">Thank you for booking with SkyJourney. Your reservation has been confirmed.</p>
+          </div>
+          
+          <!-- Booking Info -->
+          <div class="card shadow-sm mb-4">
+            <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+              <h4 class="mb-0">Booking Information</h4>
+              <div>
+                <button class="btn btn-outline-primary me-2">
+                  <i class="bi bi-printer me-2"></i>Print
+                </button>
+                <button class="btn btn-outline-primary">
+                  <i class="bi bi-envelope me-2"></i>Email
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <p class="mb-1"><strong>Booking Reference:</strong> <span id="bookingReference"></span></p>
+                  <p class="mb-1"><strong>Booking Status:</strong> <span class="badge bg-success">Confirmed</span></p>
+                  <p class="mb-1"><strong>Payment:</strong> Completed</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                  <p class="mb-1"><strong>Booking Date:</strong> <span id="bookingConfirmationDate"></span></p>
+                  <p class="mb-1"><strong>Total Amount:</strong> <span id="bookingTotalAmount"></span></p>
+                </div>
+              </div>
+              
+              <div class="flight-details mb-4">
+                <h5 class="mb-3">Flight Details</h5>
+                <div class="card p-3 border">
+                  <div class="row">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                      <div class="d-flex align-items-center">
+                        <div class="airline-logo me-3 bg-light rounded p-2 text-center" style="width: 60px; height: 60px">
+                          <i class="bi bi-airplane fs-3 text-primary"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0" id="confirmationAirline"></h6>
+                          <small class="text-muted" id="confirmationFlightNumber"></small>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-8">
+                      <div class="row">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                              <p class="mb-1 fw-bold" id="confirmationFrom"></p>
+                              <p class="mb-0" id="confirmationDepartDateTime"></p>
+                            </div>
+                            <div class="d-none d-md-block">
+                              <i class="bi bi-arrow-right fs-4"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <p class="mb-1 fw-bold" id="confirmationTo"></p>
+                          <p class="mb-0" id="confirmationArriveDateTime"></p>
+                        </div>
+                      </div>
+                      <div class="row mt-3">
+                        <div class="col-md-6">
+                          <p class="mb-0"><small class="text-muted" id="confirmationClass"></small></p>
+                        </div>
+                        <div class="col-md-6">
+                          <p class="mb-0"><small class="text-muted" id="confirmationPassengers"></small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="next-steps mb-4">
+                <h5 class="mb-3">Next Steps</h5>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="card h-100 p-3 border">
+                      <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-clock fs-4 text-primary me-3"></i>
+                        <h6 class="mb-0">Check-In Information</h6>
+                      </div>
+                      <p class="mb-0">Online check-in will be available 24 hours before your flight departure. You will receive a check-in reminder via email.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card h-100 p-3 border">
+                      <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-suitcase fs-4 text-primary me-3"></i>
+                        <h6 class="mb-0">Baggage Policy</h6>
+                      </div>
+                      <p class="mb-0">Your ticket includes 1 checked bag (up to 23kg) and 1 carry-on bag (up to 7kg). Additional baggage can be purchased online before your flight.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="travel-info">
+                <h5 class="mb-3">Important Travel Information</h5>
+                <div class="alert alert-info mb-0">
+                  <ul class="mb-0">
+                    <li>Please arrive at the airport at least 2 hours before your scheduled departure time.</li>
+                    <li>Don't forget to bring a valid government-issued photo ID or passport for identification.</li>
+                    <li>Check local COVID-19 guidelines and requirements before your travel date.</li>
+                    <li>If you need to modify your booking, please contact our customer service at least 24 hours before departure.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center mb-4">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Return to Home</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
+  

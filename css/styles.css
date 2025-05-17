@@ -1,0 +1,176 @@
+/*  Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/*  Hero Section */
+.hero-section {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1621522626370-ec009a90fbf1?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwyfHxhaXJwbGFuZSUyMGZseWluZyUyMHNjZW5pYyUyMHZpZXd8ZW58MHx8fHwxNzQ3NDgwOTY4fDA&ixlib=rb-4.1.0&fit=fillmax&h=800&w=1200');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+}
+ 
+
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+/* Search Form */
+.search-container {
+  margin-top: -70px;
+  z-index: 10;
+  position: relative;
+}
+
+/* Flight cards */
+.flight-card .flight-line {
+  height: 2px;
+  background-color: #e9ecef;
+  margin: 12px 0;
+}
+
+.flight-stops {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.airline-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Booking Progress */
+.progress-step {
+  text-align: center;
+}
+
+.progress-step .progress-icon {
+  width: 48px;
+  height: 48px;
+  background-color: #e9ecef;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.progress-step.active .progress-icon {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.progress-step.completed .progress-icon {
+  background-color: #198754;
+  color: white;
+}
+
+/* Pricing */
+.price {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+/* Card Styles */
+.deal-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.deal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Feature Box */
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 1.75rem;
+}
+
+.feature-box {
+  transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Testimonials */
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.divider-text {
+  padding: 0 15px;
+}
+
+/* Loader Animation */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #0d6efd;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+  .flight-times {
+    flex-direction: column;
+  }
+  
+  .flight-duration {
+    margin: 20px 0;
+    width: 100%;
+  }
+}
+ 

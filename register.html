@@ -1,0 +1,260 @@
+<!DOCTYPE  html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Built with jdoodle.ai - Create an account on SkyJourney to book flights and access exclusive deals">
+  <meta property="og:title" content="SkyJourney - Create Your Account">
+  <meta property="og:description" content="Built with jdoodle.ai - Sign up for SkyJourney to enjoy exclusive flight deals and personalized travel experiences">
+  <meta property="og:image" content="https://imagedelivery.net/FIZL8110j4px64kO6qJxWA/7d53e3f3ja602j4070j925aj8c26cb20ea62/public">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="SkyJourney - Create Your Account">
+  <meta property="twitter:description" content="Built with jdoodle.ai - Sign up for SkyJourney to enjoy exclusive flight deals and personalized travel experiences">
+  <meta property="twitter:image" content="https://imagedelivery.net/FIZL8110j4px64kO6qJxWA/7d53e3f3ja602j4070j925aj8c26cb20ea62/public">
+  <title>Register - SkyJourney Flight Booking</title>
+  <link rel="icon" href="favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <i class="bi bi-airplane fs-3 me-2"></i>
+        <span class="fw-bold">SkyJourney</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#search-form">Flights</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#deals">Deals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#features">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#testimonials">Contact</a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-light" href="login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Register Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card shadow-sm">
+            <div class="card-body p-5">
+              <div class="text-center mb-4">
+                <i class="bi bi-person-plus-fill fs-1 text-primary"></i>
+                <h2 class="mt-2 mb-3">Create Your Account</h2>
+                <p class="text-muted">Join SkyJourney for exclusive deals and a personalized booking experience</p>
+              </div>
+              
+              <form id="register-form" class="needs-validation" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                    <div class="invalid-feedback">
+                      Please provide your first name.
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                    <div class="invalid-feedback">
+                      Please provide your last name.
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    <div class="invalid-feedback">
+                      Please provide a valid email address.
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                    <div class="invalid-feedback">
+                      Please provide your phone number.
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required minlength="8">
+                    <div class="invalid-feedback">
+                      Password must be at least 8 characters long.
+                    </div>
+                    <small class="form-text text-muted">
+                      Must be at least 8 characters, including uppercase, lowercase, and numbers.
+                    </small>
+                  </div>
+                  <div class="col-12">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                    <div class="invalid-feedback">
+                      Passwords do not match.
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="termsAgree" name="termsAgree" required>
+                      <label class="form-check-label" for="termsAgree">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                      </label>
+                      <div class="invalid-feedback">
+                        You must agree to the terms and conditions.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
+                      <label class="form-check-label" for="newsletter">
+                        Subscribe to our newsletter for exclusive deals and offers
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-primary w-100 btn-lg">Create Account</button>
+                  </div>
+                </div>
+              </form>
+              
+              <div class="text-center mt-4">
+                <p>Already have an account? <a href="login.html" class="text-primary">Sign in</a></p>
+              </div>
+              
+              <div class="divider my-4">
+                <span class="divider-text">or</span>
+              </div>
+              
+              <div class="social-login">
+                <button class="btn btn-outline-primary w-100 mb-3">
+                  <i class="bi bi-google me-2"></i> Sign up with Google
+                </button>
+                <button class="btn btn-outline-primary w-100">
+                  <i class="bi bi-facebook me-2"></i> Sign up with Facebook
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h5 class="mb-4">SkyJourney</h5>
+          <p>Your trusted partner for booking flights to destinations worldwide. Discover the world with us!</p>
+          <div class="social-links mt-4">
+            <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-5"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-linkedin fs-5"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+          <h6 class="text-uppercase mb-4">Company</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">About Us</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Careers</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blog</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Press</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+          <h6 class="text-uppercase mb-4">Support</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Help Center</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <h6 class="text-uppercase mb-4">Newsletter</h6>
+          <p>Subscribe to our newsletter to get updates on our latest offers!</p>
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email" aria-describedby="subscribe-btn">
+            <button class="btn btn-primary" type="button" id="subscribe-btn">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">&copy; 2023 SkyJourney. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="mb-0">
+            <a href="#" class="text-white">Privacy Policy</a> | 
+            <a href="#" class="text-white">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    // Additional form validation for password matching
+    document.addEventListener('DOMContentLoaded', function() {
+      const password = document.getElementById('password');
+      const confirmPassword = document.getElementById('confirmPassword');
+      const form = document.getElementById('register-form');
+      
+      form.addEventListener('submit', function(event) {
+        if (password.value !== confirmPassword.value) {
+          confirmPassword.setCustomValidity('Passwords do not match');
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          confirmPassword.setCustomValidity('');
+        }
+        
+        form.classList.add('was-validated');
+        
+        // If form is valid, show success message and redirect
+        if (form.checkValidity() && password.value === confirmPassword.value) {
+          event.preventDefault();
+          alert('Registration successful! You can now login with your new account.');
+          window.location.href = 'login.html';
+        }
+      });
+      
+      // Clear validation when input changes
+      confirmPassword.addEventListener('input', function() {
+        if (password.value === confirmPassword.value) {
+          confirmPassword.setCustomValidity('');
+        } else {
+          confirmPassword.setCustomValidity('Passwords do not match');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+  
